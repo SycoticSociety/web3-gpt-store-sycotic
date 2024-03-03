@@ -12,7 +12,7 @@ const Navbar = () => {
             padding: "1rem",
             width: "100%",
         }}>
-            <h2>Web3 GPT Store</h2>
+            <h2>Sycotic Society Web3 NFT Comic Book Store.</h2>
             <div>
                 <Link href="/" style={{ marginRight: '1rem'}} className={sytles.navLink}>Chat</Link>
                 <Link href="/shop" className={sytles.navLink}>Shop</Link>
