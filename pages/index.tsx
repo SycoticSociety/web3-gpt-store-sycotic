@@ -10,18 +10,18 @@ import SignIn from "../components/SignIn";
 const Home: NextPage = () => {
   const showConnectEmbed = useShowConnectEmbed();
   const { contract } = useContract(CONTRACT_ADDRESS);
+  const address = useAddress();
   const { data: ownedNFTs } = useOwnedNFTs(contract, address);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const address = useAddress();
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
         {showConnectEmbed ? (
-          <SignIn/>
+          <SignIn />
         ) : (
           <>
-            <Navbar/>
+            <Navbar />
             <div style={{
               display: "flex",
               flexDirection: "row",
@@ -50,7 +50,8 @@ const Home: NextPage = () => {
                     }}
                     onClick={() => setIsModalOpen(!isModalOpen)}
                   >
-                    <p style={{ fontSize: '12px' }}>{selectedGPT}</p>
+                    {/* You might want to replace or remove the reference to `selectedGPT` */}
+                    <p style={{ fontSize: '12px' }}>Select NFT</p>
                   </div>
                   {isModalOpen && (
                     <div style={{
@@ -73,8 +74,7 @@ const Home: NextPage = () => {
                             }}
                             className={styles.modelItem}
                             onClick={() => {
-                              (nft.metadata.name);
-                              (nft.metadata.id);
+                              console.log(nft.metadata.name, nft.metadata.id); // Adjust or remove as per your needs
                               setIsModalOpen(false);
                             }}
                           >
@@ -82,14 +82,14 @@ const Home: NextPage = () => {
                           </p>
                         ))
                       ) : (
-                        <p style={{ fontSize: "12px" }}>No GPTs owned.</p>
+                        <p style={{ fontSize: "12px" }}>No NFTs owned.</p>
                       )}
                     </div>
                   )}
                 </div>
               </div>
             </div>
-            <Chat tokenId={}/>
+            {/* Chat component removed */}
           </>
         )}
       </div>
