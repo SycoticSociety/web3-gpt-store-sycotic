@@ -50,8 +50,6 @@ const Home: NextPage = () => {
                     }}
                     onClick={() => setIsModalOpen(!isModalOpen)}
                   >
-                   
-                    <p></p>
                   </div>
                   {isModalOpen && (
                     <div style={{
