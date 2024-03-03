@@ -29,7 +29,7 @@ const Home: NextPage = () => {
               alignItems: "center",
               padding: "1rem",
             }}>
-              <h3>Sycotic Society NFT Comics</h3>
+              <h3>NFT Comic Book Cover Collection</h3>
               <div style={{
                 display: "flex",
                 flexDirection: "row",
@@ -50,8 +50,8 @@ const Home: NextPage = () => {
                     }}
                     onClick={() => setIsModalOpen(!isModalOpen)}
                   >
-                    {/* You might want to replace or remove the reference to `selectedGPT` */}
-                    <p style={{ fontSize: '12px' }}>Select NFT</p>
+                   
+                    <p style={{ fontSize: '12px' }}></p>
                   </div>
                   {isModalOpen && (
                     <div style={{
