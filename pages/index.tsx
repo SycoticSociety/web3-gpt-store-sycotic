@@ -73,8 +73,8 @@ const Home: NextPage = () => {
                             }}
                             className={styles.modelItem}
                             onClick={() => {
-                              setSelectedGPT(nft.metadata.name);
-                              setSelectedGPTId(nft.metadata.id);
+                              (nft.metadata.name);
+                              (nft.metadata.id);
                               setIsModalOpen(false);
                             }}
                           >
@@ -89,7 +89,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
-            <Chat tokenId={selectedGPTId}/>
+            <Chat tokenId={}/>
           </>
         )}
       </div>
