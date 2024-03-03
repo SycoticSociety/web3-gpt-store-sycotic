@@ -51,7 +51,7 @@ const Home: NextPage = () => {
                     onClick={() => setIsModalOpen(!isModalOpen)}
                   >
                    
-                    <p style={{ fontSize: '12px' }}></p>
+                    <p></p>
                   </div>
                   {isModalOpen && (
                     <div style={{
