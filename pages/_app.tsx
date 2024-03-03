@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { ThirdwebProvider, coinbaseWallet, embeddedWallet, metamaskWallet, smartWallet } from "@thirdweb-dev/react";
+import { ThirdwebProvider, coinbaseWallet, embeddedWallet, metamaskWallet, localWallet, useContract, useTokenBalance, walletConnect, } from "@thirdweb-dev/react";
 import { Cronos } from "@thirdweb-dev/chains";
 import "../styles/globals.css";
 
@@ -7,21 +7,22 @@ import "../styles/globals.css";
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
 
-
-const smartWalletConfig = {
-  factoryAddress: "YOUR_FACTORY_ADDRESS",
-  gasless: true,
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
       activeChain={Cronos}
-      supportedWallets={[
-        smartWallet(embeddedWallet(), smartWalletConfig),
-        metamaskWallet(),
+       supportedWallets={[
+        metamaskWallet({ recommended: true }),
         coinbaseWallet(),
+        walletConnect(),
+        localWallet(),
+        embeddedWallet({
+          auth: {
+            options: ["email", "google"],
+          },
+        }),
+
       ]}
     >
       <Component {...pageProps} />
