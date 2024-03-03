@@ -4,20 +4,15 @@ import { NextPage } from "next";
 import Navbar from "../components/Navbar";
 import { CONTRACT_ADDRESS } from "../lib/constants";
 import { useState } from "react";
-import Chat from "../components/Chat";
+
 import SignIn from "../components/SignIn";
 
 const Home: NextPage = () => {
   const showConnectEmbed = useShowConnectEmbed();
-
-  const address = useAddress();
   const { contract } = useContract(CONTRACT_ADDRESS);
-
   const { data: ownedNFTs } = useOwnedNFTs(contract, address);
-
-  const [selectedGPT, setSelectedGPT] = useState<string | number | null | undefined>("Select GPT");
-  const [selectedGPTId, setSelectedGPTId] = useState<string | number | null | undefined>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const address = useAddress();
 
   return (
     <main className={styles.main}>
@@ -34,7 +29,7 @@ const Home: NextPage = () => {
               alignItems: "center",
               padding: "1rem",
             }}>
-              <h3>GPT Chat</h3>
+              <h3>Sycotic Society NFT Comics</h3>
               <div style={{
                 display: "flex",
                 flexDirection: "row",
