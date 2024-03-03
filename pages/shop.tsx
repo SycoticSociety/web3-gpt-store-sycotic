@@ -33,12 +33,12 @@ const Shop = () => {
                                         <Web3Button
                                             contractAddress={CONTRACT_ADDRESS}
                                             action={(contract) => contract.erc1155.claim(nft.metadata.id, 1)}
-                                            onSuccess={() => alert("GPT claimed!")}
-                                        >Claim GPT</Web3Button>
+                                            onSuccess={() => alert("NFT purchased!")}
+                                        >Buy now</Web3Button>
                                     </div>
                                 ))
                             ) : (
-                                <p>No GPTs available</p>
+                                <p>You do not own any comic books.</p>
                             )}
                         </div>
                     </>
